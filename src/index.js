@@ -269,6 +269,7 @@ class MiniCssExtractPlugin {
       mainTemplate.hooks.requireEnsure.tap(
         pluginName,
         (source, chunk, hash) => {
+          /*
           const chunkMap = this.getCssChunkObject(chunk);
           if (Object.keys(chunkMap).length > 0) {
             const chunkMaps = chunk.getChunkMaps();
@@ -388,6 +389,7 @@ class MiniCssExtractPlugin {
               '}',
             ]);
           }
+          */
           return source;
         }
       );
