@@ -269,6 +269,7 @@ class MiniCssExtractPlugin {
       mainTemplate.hooks.requireEnsure.tap(
         pluginName,
         (source, chunk, hash) => {
+          console.log('Here is the source in requireEnsure:: ', source);
           /*
           const chunkMap = this.getCssChunkObject(chunk);
           if (Object.keys(chunkMap).length > 0) {
@@ -397,8 +398,10 @@ class MiniCssExtractPlugin {
   }
 
   getCssChunkObject(mainChunk) {
+    console.log('Here is the mainChunk:: ', mainChunk);
     const obj = {};
     for (const chunk of mainChunk.getAllAsyncChunks()) {
+      console.log('here is the individual chunk:: ', chunk);
       for (const module of chunk.modulesIterable) {
         if (module.type === MODULE_TYPE) {
           obj[chunk.id] = 1;
